@@ -1,0 +1,83 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>LR1</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>LR1</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+    <!-- CDI API -->
+    <dependency>
+        <groupId>javax.enterprise</groupId>
+        <artifactId>cdi-api</artifactId>
+        <version>2.0.SP1</version>
+        <scope>provided</scope>
+    </dependency>
+    
+    <!-- Weld SE (CDI implementation) -->
+    <dependency>
+        <groupId>org.jboss.weld.se</groupId>
+        <artifactId>weld-se-shaded</artifactId>
+        <version>3.1.0.Final</version>
+    </dependency>
+
+    <dependency>
+        <groupId>javax.annotation</groupId>
+        <artifactId>javax.annotation-api</artifactId>
+        <version>1.3.2</version> <!-- или любая версия, которая вам нужна -->
+    </dependency>
+
+    <!-- Logging -->
+    <dependency>
+        <groupId>org.jboss.logging</groupId>
+        <artifactId>jboss-logging</artifactId>
+        <version>3.3.0.Final</version>
+    </dependency>
+
+    <!-- JUnit -->
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+        <scope>test</scope>
+    </dependency>
+</dependencies>
+
+        <build>
+        <plugins>
+            <!-- Maven Compiler Plugin для компиляции кода -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <!-- Exec Maven Plugin для выполнения Java класса -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <mainClass>com.example.lab1Start</mainClass> <!-- Замените на ваш основной класс -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

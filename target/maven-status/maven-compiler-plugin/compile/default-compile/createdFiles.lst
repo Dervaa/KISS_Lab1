@@ -1,0 +1,5 @@
+com\example\GcdMethods\PrimeFactorizationGcd.class
+com\example\Component\GcdCalculator.class
+com\example\Interceptors\TimeProfilerInterceptor.class
+com\example\GcdMethods\EuclideanGcd.class
+com\example\lab1Start.class
